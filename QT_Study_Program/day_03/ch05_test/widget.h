@@ -15,8 +15,15 @@ public:
     explicit Widget(QWidget *parent = nullptr);
     ~Widget();
 
+protected:
+    void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *event);
+
 private:
     Ui::Widget *ui;
+    bool keyUp;
+    bool keyLeft;
+    bool move;
 };
 
 #endif // WIDGET_H
