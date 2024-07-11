@@ -1,6 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include <QMouseEvent>
+#include <QDebug>
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -32,7 +33,33 @@ void Widget::mouseMoveEvent(QMouseEvent *event)
     if(event->buttons() & Qt::LeftButton){
         QPoint temp;
         temp = event->globalPos() - offset;
+        qDebug() << temp;
         move(temp);
+    }
+}
+
+void Widget::mouseReleaseEvent(QMouseEvent *event)
+{
+    Q_UNUSED(event);
+    QApplication::restoreOverrideCursor();
+}
+
+void Widget::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    if(event->button() == Qt::LeftButton){
+        if(windowState() != Qt::WindowFullScreen)
+            setWindowState(Qt::WindowFullScreen);
+        else setWindowState(Qt::WindowNoState);
+    }
+}
+
+void Widget::wheelEvent(QWheelEvent *event)
+{
+    if(event->delta() > 0){                 //当滚轮远离使用者时
+        ui->textEdit->zoomIn();             //放大
+    }
+    else{
+        ui->textEdit->zoomOut();            //缩小
     }
 }
 
