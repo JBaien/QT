@@ -26,8 +26,19 @@ bool Widget::eventFilter(QObject *obj, QEvent *event)
         }
     }
     else if (obj == ui->spinBox) {
-
-    }
+        if(event->type() == QEvent::KeyPress) {
+            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+            if(keyEvent->key() == Qt::Key_Space) {
+                ui->spinBox->setValue(0);
+                return true;
+            } else {
+                return false;
+                }
+            }else {
+            return false;
+                }
+        }
+    else return  QWidget::eventFilter(obj, event);
 }
 
 Widget::~Widget()
