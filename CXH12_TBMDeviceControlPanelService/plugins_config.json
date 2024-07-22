@@ -1,0 +1,22 @@
+{
+  "SwitchPlugin":
+  {
+    "plugin_name": "libSwitchPlugin.so",
+    "path": "plugins/libSwitchPlugin.so"
+  },
+  "ControlPanelPlugin":
+  {
+    "plugin_name": "libControlPanelPlugin.so",
+    "path": "plugins/libControlPanelPlugin.so"
+  },
+  "CommCANPlugin":
+  {
+    "plugin_name": "libCommCANPlugin.so",
+    "path": "plugins/libCommCANPlugin.so"
+  },
+  "CommMbTCPPlugin":
+  {
+    "plugin_name": "libCommMbTCPPlugin.so",
+    "path": "plugins/libCommMbTCPPlugin.so"
+  }
+}

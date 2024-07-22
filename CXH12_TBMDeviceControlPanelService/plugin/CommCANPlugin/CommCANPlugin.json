@@ -1,0 +1,7 @@
+{
+  "Name": "CommCANPlugin",
+  "Version": "1.0.0",
+  "Vendor": "zhangzheng",
+  "Description": "This is a CommCANPlugin.",
+  "Dependencies":[{"Name" : "ControlPanelPlugin", "Version" : "1.0.0"}]
+}

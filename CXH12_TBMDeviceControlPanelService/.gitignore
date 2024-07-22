@@ -1,0 +1,8 @@
+*.pro.user
+build/**
+plugin/CommCANPlugin/build
+plugin/ControlPanelPlugin/build
+plugin/CommMbRTUPlugin/build
+plugin/CommMbTCPPlugin/build
+plugin/SwitchPlugin/build
+
