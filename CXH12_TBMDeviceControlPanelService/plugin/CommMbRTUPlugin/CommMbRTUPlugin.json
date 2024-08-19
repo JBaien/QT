@@ -1,7 +1,0 @@
-{
-  "Name": "CommMbRTUPlugin",
-  "Version": "1.0.0",
-  "Vendor": "zhangzheng",
-  "Description": "This is a CommMbRTUPlugin.",
-  "Dependencies":[{"Name" : "ControlPanelPlugin", "Version" : "1.0.0"}]
-}
