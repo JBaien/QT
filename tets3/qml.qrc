@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/images"/>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>image/fault.png</file>
+        <file>image/greedCycle.png</file>
+        <file>image/redCycle.png</file>
+        <file>main.cpp</file>
+        <file>image/backgroundimage.png</file>
+        <file>image/menuBc.png</file>
+    </qresource>
+</RCC>
