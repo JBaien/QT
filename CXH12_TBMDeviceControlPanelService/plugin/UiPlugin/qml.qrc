@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-        <file>Image/hdzk2.png</file>
-        <file>Image/hdzk1.png</file>
-        <file>Image/hdzk3.png</file>
-    </qresource>
-</RCC>
