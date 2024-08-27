@@ -1,0 +1,11 @@
+{
+        "alarm_history": [
+        {
+            "alarm_date": "2024-08-27",
+            "alarm_time": "16:02:48",
+            "recover_time":"16:12:56",
+            "is_fault": false,
+            "alarm_message": "AC24漏电屏蔽"
+        }
+    ]
+}

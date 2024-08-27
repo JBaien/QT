@@ -80,7 +80,7 @@ Window {
                             Text {
                                 id: element2
                                 color: "#ffffff"
-                                text: qsTr("触发日期")
+                                text: qsTr("屏蔽日期")
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
@@ -98,7 +98,7 @@ Window {
                             Text {
                                 id: element4
                                 color: "#ffffff"
-                                text: "触发时间"
+                                text: "屏蔽时间"
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
@@ -116,7 +116,7 @@ Window {
                             Text {
                                 id: element3
                                 color: "#ffffff"
-                                text: qsTr("恢复时间")
+                                text: qsTr("取消屏蔽")
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
@@ -134,7 +134,7 @@ Window {
                             Text {
                                 id: element5
                                 color: "#ffffff"
-                                text: qsTr("报警消息(故障红,确认蓝)")
+                                text: qsTr("屏    蔽    消    息")
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
@@ -152,7 +152,7 @@ Window {
                         ListView {
                             id: listView
                             width: parent.width
-                            model: alarmModel
+                            model: blockingModel
                             delegate: Rectangle {
                                 width: listView.width
                                 height: 100
@@ -184,7 +184,7 @@ Window {
                                         color: "#00000000"
 
                                         Text {
-                                            text: alarm_date
+                                            text: blocking_date
                                             font.pixelSize: 30
                                             color: "white"
                                             verticalAlignment: Text.AlignVCenter
@@ -199,7 +199,7 @@ Window {
                                         color: "#00000000"
 
                                         Text {
-                                            text: alarm_time
+                                            text: blocking_time
                                             font.pixelSize: 30
                                             color: "white"
                                             verticalAlignment: Text.AlignVCenter
@@ -214,7 +214,7 @@ Window {
                                         color: "#00000000"
 
                                         Text {
-                                            text: recover_time
+                                            text: is_unblocked ? "已取消" : "未取消"
                                             font.pixelSize: 30
                                             color: "white"
                                             verticalAlignment: Text.AlignVCenter
@@ -229,9 +229,9 @@ Window {
                                         color: "#00000000"
 
                                         Text {
-                                            text: alarm_message
+                                            text: blocking_message
                                             font.pixelSize: 30
-                                            color:  is_fault ? "red" : "yellow"
+                                            color: "white"
                                             verticalAlignment: Text.AlignVCenter
                                             horizontalAlignment: Text.AlignHCenter
                                             anchors.fill: parent
@@ -257,7 +257,7 @@ Window {
                     width: 1920
                     height: 200
                     color: "#ffffff"
-                    text: qsTr("报警查询")
+                    text: qsTr("故障屏蔽记录")
                     fontSizeMode: Text.Fit
                     font.bold: true
                     font.family: "Tahoma"
