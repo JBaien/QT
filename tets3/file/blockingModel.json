@@ -1,0 +1,28 @@
+{
+    "blocking_records": [
+        {
+            "blocking_date": "2024-08-27",
+            "blocking_message": "AC127漏电屏蔽",
+            "blocking_time": "16:02:48",
+            "is_unblocked": false
+        },
+        {
+            "blocking_date": "2024-08-27",
+            "blocking_message": "瓦斯断线屏蔽",
+            "blocking_time": "16:02:03",
+            "is_unblocked": false
+        },
+        {
+            "blocking_date": "2023-04-02",
+            "blocking_message": "油温过热",
+            "blocking_time": "10:30:00",
+            "is_unblocked": false
+        },
+        {
+            "blocking_date": "2023-04-01",
+            "blocking_message": "油泵电机超温故障",
+            "blocking_time": "14:45:00",
+            "is_unblocked": true
+        }
+    ]
+}

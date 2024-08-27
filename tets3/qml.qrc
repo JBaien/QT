@@ -8,8 +8,11 @@
         <file>main.cpp</file>
         <file>image/backgroundimage.png</file>
         <file>image/menuBc.png</file>
-        <file>main2.qml</file>
-        <file>main3.qml</file>
         <file>main.qml</file>
+        <file>main3.qml</file>
+        <file>main4.qml</file>
+        <file>file/blockingModel.json</file>
+        <file>blockingmodel.cpp</file>
+        <file>blockingmodel.h</file>
     </qresource>
 </RCC>
