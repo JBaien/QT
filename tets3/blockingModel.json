@@ -2,7 +2,7 @@
     "blocking_records": [
         {
             "blocking_date": "2024-08-27",
-            "blocking_message": "AC127漏电屏蔽",
+            "blocking_message": "AC24漏电屏蔽",
             "blocking_time": "16:02:48",
             "is_unblocked": false
         },
