@@ -2,17 +2,28 @@
     <qresource prefix="/images"/>
     <qresource prefix="/">
         <file>main1.qml</file>
-        <file>image/fault.png</file>
-        <file>image/greedCycle.png</file>
-        <file>image/redCycle.png</file>
         <file>main.cpp</file>
-        <file>image/backgroundimage.png</file>
-        <file>image/menuBc.png</file>
         <file>main2.qml</file>
         <file>main3.qml</file>
         <file>main4.qml</file>
         <file>blockingmodel.cpp</file>
         <file>blockingmodel.h</file>
         <file>main.qml</file>
+        <file>main5.qml</file>
+        <file>Image/background.png</file>
+        <file>Image/lock_blue.png</file>
+        <file>Image/lock_red.png</file>
+        <file>Image/menu_no.png</file>
+        <file>Image/menu_yes.png</file>
+        <file>Image/model.png</file>
+        <file>Image/notice.png</file>
+        <file>Image/status_gray.png</file>
+        <file>Image/status_green.png</file>
+        <file>Image/status_red.png</file>
+        <file>Image/status_yellow.png</file>
+        <file>Image/title_com.png</file>
+        <file>Image/title_first.png</file>
+        <file>Image/title_second.png</file>
+        <file>Image/voltage.png</file>
     </qresource>
 </RCC>
