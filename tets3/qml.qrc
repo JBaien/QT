@@ -10,7 +10,6 @@
         <file>blockingmodel.h</file>
         <file>main.qml</file>
         <file>main5.qml</file>
-        <file>Image/background.png</file>
         <file>Image/lock_blue.png</file>
         <file>Image/lock_red.png</file>
         <file>Image/menu_no.png</file>
@@ -25,5 +24,6 @@
         <file>Image/title_first.png</file>
         <file>Image/title_second.png</file>
         <file>Image/voltage.png</file>
+        <file>Image/background.png</file>
     </qresource>
 </RCC>
