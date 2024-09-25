@@ -14,11 +14,11 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
 //    QString filePath = "d:/git/QT/tets3/file/blockingModel.json";
-//    BlockingModel blockingModel;
-//    blockingModel.loadFromJson("blockingModel.json");
-//    blockingModel.addBlockingRecord("AC127漏电屏蔽");
+    BlockingModel blockingModel;
+    blockingModel.loadFromJson("blockingModel.json");
+//    blockingModel.addBlockingRecord("24漏电屏蔽ssssssssssssssssssssssssss");
 //    blockingModel.saveToJson("blockingModel.json");
-//    engine.rootContext()->setContextProperty("blockingModel", &blockingModel);
+    engine.rootContext()->setContextProperty("blockingModel", &blockingModel);
 
 
     AlarmModel alarmModel;

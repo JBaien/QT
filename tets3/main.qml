@@ -1,6 +1,6 @@
-import QtQuick 2.9
-import QtQuick.Window 2.2
-import QtQuick.Controls 2.2
+import QtQuick 2.12
+import QtQuick.Window 2.12
+import QtQuick.Controls 2.12
 
 Window {
     id: window
@@ -225,6 +225,11 @@ Window {
                                         }
                                     }
 
+                                    Item {
+                                        width: 90
+                                        height: 56
+                                    }
+
                                     // 对齐内容列：报警消息
                                     Rectangle {
                                         width: 330
@@ -236,7 +241,7 @@ Window {
                                             font.pixelSize: 26
                                             color: "white"
                                             verticalAlignment: Text.AlignVCenter
-                                            horizontalAlignment: Text.AlignHCenter
+                                            horizontalAlignment: Text.AlignLeft
                                             anchors.fill: parent
                                         }
                                     }
@@ -248,9 +253,9 @@ Window {
                                 y:78
                                 width: 1710
                                 height: 1
-                                color: Qt.rgba(1, 1, 1, 0.24)
+                                color: Qt.rgba(1, 1, 1, 0.05)
                                 border.width: 1
-                                border.color: Qt.rgba(1, 1, 1, 0.24)
+                                border.color: Qt.rgba(1, 1, 1, 0.05)
                             }
                         }
                     }
@@ -305,7 +310,7 @@ Window {
             Image {
                 id: image2
                 x: 21
-                y: 1
+                y: 12
                 width: 200
                 height: 52
                 fillMode: Image.PreserveAspectFit
