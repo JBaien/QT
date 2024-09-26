@@ -159,10 +159,10 @@ Window {
         ListModel {
             id: moterdata
             ListElement { device: "油泵电机"; status: 4; UA: "36.2 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "60 ℃";}
-            ListElement { device: "截低电机"; status: 5; UA: "28.2 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "50 ℃";}
-            ListElement { device: "截高电机"; status: 3; UA: "46.8 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "56 ℃";}
-            ListElement { device: "二运电机"; status: 0; UA: "32.9 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "49 ℃";}
-            ListElement { device: "风机电机"; status: 2; UA: "45.2 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "31 ℃";}
+            ListElement { device: "截低电机"; status: 0; UA: "28.2 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "50 ℃";}
+            ListElement { device: "截高电机"; status: 1; UA: "46.8 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "56 ℃";}
+            ListElement { device: "二运电机"; status: 2; UA: "32.9 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "49 ℃";}
+            ListElement { device: "风机电机"; status: 5; UA: "45.2 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "31 ℃";}
         }
         Repeater {
             model: moterdata
@@ -180,6 +180,40 @@ Window {
                 }
             }
         }
+        // 左下工作相关信息
+        Loader{
+            id: workStatus
+            x: 44
+            y: 577
+            source: "qrc:/Components/StatusComponent.qml"
+            onLoaded: {
+                item.someStatus1 = 1;
+                item.someStatus2 = 2;
+            }
+        }
 
+    }
+
+    // 故障屏蔽栏
+    Loader{
+        x: 0
+        y: 1039
+        id: fault
+        source: "qrc:/Components/FaultComponent.qml"
+        onLoaded: {
+            item.faultText = qsTr("故障数量");
+            item.faultNum = 5
+            item.shieldText = qsTr("屏蔽数量")
+            item.shieldNum = 3
+            item.alarmMessage = qsTr("这是一条报警信息")
+        }
+    }
+
+    // 底部信息栏
+    // 左下工作相关信息
+    Loader{
+        id: bottomInfo
+        y: 1111
+        source: "qrc:/Components/BottomComponent.qml"
     }
 }

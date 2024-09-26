@@ -35,5 +35,8 @@
         <file>Components/ModeComponent.qml</file>
         <file>Components/MoterComponent.qml</file>
         <file>Image/back.png</file>
+        <file>Components/FaultComponent.qml</file>
+        <file>Components/StatusComponent.qml</file>
+        <file>Components/BottomComponent.qml</file>
     </qresource>
 </RCC>

@@ -25,28 +25,28 @@ Rectangle{
     }
     Rectangle{
         id: test
-        width: 110
+        width: 120
         height: 46
         color: "#137B40"
-        x: 327
+        x: 317
         y: 9
         radius: 8
         Text {
             id: statusText
-            width: 56
-            height: 40
-            anchors.centerIn: parent
             text: {switch (status) {
-                case 0: return " 停状态";
-                case 1: return " 预警";
-                case 2: return " 声光预警";
-                case 3: return " 启动";
-                case 4: return " 运行状态";
-                case 5: return " 停止";
-                case 9: return " 错误";
+                case 0: return "停状态";
+                case 1: return "预警";
+                case 2: return "声光预警";
+                case 3: return "启动";
+                case 4: return "运行状态";
+                case 5: return "停止";
+                case 9: return "错误";
                 default: return "";
                 }
             }
+            anchors.fill: parent
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
             color: "#FFFFFF"
             font.pixelSize: 28
             font.bold: true
@@ -57,7 +57,7 @@ Rectangle{
         text: qsTr(ua)
         width: 64
         height: 42
-        x: 596
+        x: 580
         y: 12
         color: "#FFFFFF"
         font.pixelSize: 30
@@ -68,7 +68,7 @@ Rectangle{
         text: qsTr(va)
         width: 64
         height: 42
-        x: 845
+        x: 830
         y: 12
         color: "#FFFFFF"
         font.pixelSize: 30
@@ -79,7 +79,7 @@ Rectangle{
         text: qsTr(wa)
         width: 64
         height: 42
-        x: 1094
+        x: 1080
         y: 12
         color: "#FFFFFF"
         font.pixelSize: 30

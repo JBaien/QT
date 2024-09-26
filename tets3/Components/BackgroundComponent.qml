@@ -35,12 +35,33 @@ Rectangle {
 
         Image {
             id: image
-            x: 1843
+            x: 1800
             y: 3
             width: 56
             height: 56
-            source: "../Image/menu_yes.png"
+            source: "qrc:/Image/menu_yes.png"
             fillMode: Image.PreserveAspectFit
         }
+
+        Rectangle {
+            id: rectangle
+            x: 1860
+            y: 3
+            width: 56
+            height: 56
+            color: "#00000000"
+
+            Text {
+                id: element
+                color: "#ffffff"
+                text: qsTr("返回")
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                anchors.fill: parent
+                font.pixelSize: 28
+                font.bold: true
+            }
+        }
     }
+
 }
