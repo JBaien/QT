@@ -1,321 +1,185 @@
-import QtQuick 2.12
-import QtQuick.Window 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.2
+import QtQuick.Window 2.2
 
 Window {
-    id: window
+    id: root
     width: 1920
     height: 1200
     visible: true
-    color: "#00000000"
-    title: qsTr("报警查询")
+    title: "HDZK ControlPanel"
 
-    Item {
-        id: rootItem
-        width: 1920
-        height: 1200
-        visible: true
+    Loader {    //背景组件
+        id: backgroundLoader
+        x: 0
+        y: 0
+        source: "qrc:/Components/BackgroundComponent.qml"
+    }
 
-        BorderImage {
-            id: borderImage
-            width: 1920
-            height: 800
-            z: 1
-            anchors.fill: parent
-            source: "Image/background.png"
+    Rectangle { //主要内容
+        id: rectangle
+        x: 10
+        y: 79
+        width: 1900
+        height: 957
+        color: "#00000000"
 
-            Image {
-                id: image
-                x: 0
-                y: 0
-                width: 1920
-                height: 80
-                opacity: 1
-                fillMode: Image.PreserveAspectFit
-                source: "Image/title_first.png"
-            }
-
-            Rectangle {
-                x: 0
-                y: 150
-                width: 1920
-                height: 4
-                color: "#46505B"
-            }
-
-            // 表头元素
-            Text {
-                id: element1
-                x: 127
-                y: 199
-                z: 1
-                width: 48
-                height: 33
-                color: "#ffffff"
-                text: qsTr("序号")
-                font.family: "Courier"
-                font.pixelSize: 24
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-            }
-
-            Text {
-                id: element2
-                x: 290
-                y: 199
-                z: 1
-                width: 96
-                height: 33
-                color: "#ffffff"
-                text: qsTr("触发日期")
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                font.family: "Times New Roman"
-                font.pixelSize: 24
-            }
-
-            Text {
-                id: element3
-                x: 591
-                y: 199
-                z: 1
-                width: 96
-                height: 33
-                color: "#ffffff"
-                text: qsTr("触发时间")
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: 24
-            }
-
-            Text {
-                id: element4
-                x: 826
-                y: 199
-                z: 1
-                width: 96
-                height: 33
-                color: "#ffffff"
-                text: qsTr("恢复时间")
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: 24
-            }
-
-            Text {
-                id: element5
-                x: 1095
-                y: 199
-                z: 1
-                width: 312
-                height: 33
-                color: "#ffffff"
-                text: qsTr("报警消息（报警红，恢复白）")
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: 24
-            }
-
-            Rectangle {
-                id: rectangle2
-                x: 105
-                y: 187
-                width: 1710
-                height: 60
-                color: "#26333f"
-            }
-
-            Rectangle {
-                id: rectangle
-                x: 105
-                y: 247
-                width: 1710
-                height: 900
-                color: "#00000000"
-                radius: 1
-                border.width: 0
-
-                // 内容区域
-                ScrollView {
-                    anchors.fill: parent
-                    clip: true
-
-                    ListView {
-                        id: listView
-                        anchors.fill: parent
-                        model: alarmModel
-                        delegate: Rectangle {
-                            width: listView.width
-                            height: 78
-                            color: "#00000000"
-
-                            Rectangle {
-                                y:11
-                                width: 1710
-                                height: 56
-                                color: is_fault ? "#751919" : "#00000000"
-                                border.color: is_fault ? "#FF5757" : "#00000000"
-                                border.width: 1.5
-
-                                Row {
-                                    spacing: 0
-                                    anchors.fill: parent
-
-                                    // 对齐内容列：序号
-                                    Rectangle {
-                                        width: 80
-                                        height: 56
-                                        color: "#00000000"
-
-                                        Text {
-                                            text: index + 1
-                                            font.pixelSize: 26
-                                            color: "white"
-                                            verticalAlignment: Text.AlignVCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            anchors.fill: parent
-                                        }
-                                    }
-
-                                    // 对齐内容列：触发日期
-                                    Rectangle {
-                                        width: 350
-                                        height: 56
-                                        color: "#00000000"
-
-                                        Text {
-                                            text: alarm_date
-                                            font.pixelSize: 26
-                                            color: "white"
-                                            verticalAlignment: Text.AlignVCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            anchors.fill: parent
-                                        }
-                                    }
-
-                                    // 对齐内容列：触发时间
-                                    Rectangle {
-                                        width: 210
-                                        height: 56
-                                        color: "#00000000"
-
-                                        Text {
-                                            text: alarm_time
-                                            font.pixelSize: 26
-                                            color: "white"
-                                            verticalAlignment: Text.AlignVCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            anchors.fill: parent
-                                        }
-                                    }
-
-                                    // 对齐内容列：恢复时间
-                                    Rectangle {
-                                        width: 260
-                                        height: 56
-                                        color: "#00000000"
-
-                                        Text {
-                                            text: recover_time
-                                            font.pixelSize: 26
-                                            color: "white"
-                                            verticalAlignment: Text.AlignVCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            anchors.fill: parent
-                                        }
-                                    }
-
-                                    Item {
-                                        width: 90
-                                        height: 56
-                                    }
-
-                                    // 对齐内容列：报警消息
-                                    Rectangle {
-                                        width: 330
-                                        height: 56
-                                        color: "#00000000"
-
-                                        Text {
-                                            text: alarm_message
-                                            font.pixelSize: 26
-                                            color: "white"
-                                            verticalAlignment: Text.AlignVCenter
-                                            horizontalAlignment: Text.AlignLeft
-                                            anchors.fill: parent
-                                        }
-                                    }
-                                }
-                            }
-
-                            // 分隔线放在内容 Rectangle 的下方
-                            Rectangle {
-                                y:78
-                                width: 1710
-                                height: 1
-                                color: Qt.rgba(1, 1, 1, 0.05)
-                                border.width: 1
-                                border.color: Qt.rgba(1, 1, 1, 0.05)
-                            }
-                        }
-                    }
+        //心跳组件
+        ListModel {
+            id: heartbeat
+            ListElement { text: "控制器心跳"; heartbeatValue: 1 }
+            ListElement { text: "远控心跳"; heartbeatValue: 0 }
+        }
+        Repeater {
+            model: heartbeat
+            delegate: Loader {
+                x: 30 + (index * 340)  // 根据需要调整位置
+                y: 24
+                source: "qrc:/Components/HeartbeatComponent.qml"
+                onLoaded: {
+                    item.textValue = qsTr(model.text);
+                    item.heartbeatValue = model.heartbeatValue;
                 }
-            }
-
-            // 保持顶部的标题栏不变
-            Rectangle {
-                id: rectangle1
-                x: 0
-                y: 0
-                width: 1920
-                height: 150
-                color: "#00000000"
-
-                Text {
-                    id: element
-                    x: 881
-                    y: 97
-                    width: 120
-                    height: 42
-                    color: "#ffffff"
-                    text: qsTr("报警查询")
-                    fontSizeMode: Text.Fit
-                    font.bold: true
-                    font.family: "PingFang SC-Bold"
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: 30
-                }
-            }
-
-            Rectangle {
-                x: 801
-                y: 90
-                width: 280
-                height: 64
-                color: "#00000000"
-                radius: 4
-                Image {
-                    id: image1
-                    x: 0
-                    y: 0
-                    width: 280
-                    height: 64
-                    clip: false
-                    fillMode: Image.PreserveAspectFit
-                    source: "Image/title_second.png"
-                }
-            }
-
-            Image {
-                id: image2
-                x: 21
-                y: 12
-                width: 200
-                height: 52
-                fillMode: Image.PreserveAspectFit
-                source: "Image/title_com.png"
             }
         }
+
+
+        // 工作状态组件
+        ListModel {
+            id: modeModel
+            ListElement { text: "本地模式"; modeValue: 0 }
+            ListElement { text: "截割手动模式"; modeValue: 1 }
+            ListElement { text: "掘进模式"; modeValue: 0 }
+        }
+        Repeater {
+            model: modeModel
+            delegate: Loader {
+                x: 710 + (index * 400)  // 根据需要调整位置
+                y: 24
+                source: "qrc:/Components/ModeComponent.qml"
+                onLoaded: {
+                    item.textValue = qsTr(model.text);
+                    item.modeValue = model.modeValue;
+                }
+            }
+        }
+
+        // 间隔线
+        Rectangle{
+            x:19
+            y:98
+            width: 1877
+            height: 2
+            color: "#41454B"
+        }
+
+        //系统电压组件
+        Loader{
+            id: systemvoltage
+            x:10
+            y:167
+            source: "qrc:/Components/SystemvoltageComponent.qml"
+            onLoaded: {
+                item.textValue = qsTr("1140V");
+            }
+        }
+
+        // 间隔线
+        Rectangle{
+            x:20
+            y:550
+            width: 342
+            height: 2
+            color: Qt.rgba(1,1,1,0.2)
+        }
+        // 间隔线
+        Rectangle{
+            x:371
+            y:98
+            width: 2
+            height: 861
+            color: Qt.rgba(1,1,1,0.2)
+        }
+
+        // 各种工作时间
+        ListModel {
+            id: cuttime
+            ListElement { worktext: "总工作时间"; worktime: "12 时 24 分" }
+            ListElement { worktext: "总截割时间"; worktime: "10 时 30 分" }
+            ListElement { worktext: "自动截割时间"; worktime: "6 时 18 分" }
+        }
+        Repeater {
+            model: cuttime
+            delegate: Loader {
+                x: 383 + (index * 500)  // 根据需要调整位置
+                y: 118
+                source: "qrc:/Components/WorktimeComponent.qml"
+                onLoaded: {
+                    item.textValue = qsTr(model.worktext);
+                    item.time = qsTr(model.worktime);
+                }
+            }
+        }
+
+
+        // 粉尘等数据
+        ListModel {
+            id: somedata
+            ListElement { datatext1: "粉尘浓度"; datatext2: "瓦斯浓度"; dataValue1: "0.05 %"; dataValue2: "0.2 %";}
+            ListElement { datatext1: "液压油温"; datatext2: "液压油位"; dataValue1: "39 ℃"; dataValue2: "98 %";}
+            ListElement { datatext1: "水压力"; datatext2: "水流量"; dataValue1: "0.0 MPa"; dataValue2: "0.0 L/min";}
+            ListElement { datatext1: "本体倾角X"; datatext2: "Y"; dataValue1: "0.0 °"; dataValue2: "0.0 °";}
+            ListElement { datatext1: "铲板倾角X"; datatext2: "Y"; dataValue1: "2.4 °"; dataValue2: "15 °";}
+            ListElement { datatext1: "钻锚前进距离 左"; datatext2: "右"; dataValue1: "5 mm"; dataValue2: "6 mm";}
+        }
+        Repeater {
+            model: somedata
+            delegate: Loader {
+                x: 387 + (index % 3) * 502  // 每三个一行，确定 x 坐标
+                y: 206 + Math.floor(index / 3) * 172  // 每行高度为 172，确定 y 坐标
+                source: "qrc:/Components/DataComponent.qml"
+                onLoaded: {
+                    item.dataText1 = qsTr(model.datatext1);
+                    item.dataText2 = qsTr(model.datatext2);
+                    item.dataValue1 = qsTr(model.dataValue1);
+                    item.dataValue2 = qsTr(model.dataValue2);
+                }
+            }
+        }
+
+
+        // 电机状态标题栏
+        Loader{
+            id: moter
+            x: 372
+            y: 555
+            source: "qrc:/Components/MoterTitleComponent.qml"
+        }
+
+        // 电机参数数据
+        ListModel {
+            id: moterdata
+            ListElement { device: "油泵电机"; status: 4; UA: "36.2 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "60 ℃";}
+            ListElement { device: "截低电机"; status: 5; UA: "28.2 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "50 ℃";}
+            ListElement { device: "截高电机"; status: 3; UA: "46.8 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "56 ℃";}
+            ListElement { device: "二运电机"; status: 0; UA: "32.9 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "49 ℃";}
+            ListElement { device: "风机电机"; status: 2; UA: "45.2 A"; VA: "38.2 A"; WA: "38.6 A"; temp: "31 ℃";}
+        }
+        Repeater {
+            model: moterdata
+            delegate: Loader {
+                x: 377
+                y: 624 + index * 65
+                source: "qrc:/Components/MoterComponent.qml"
+                onLoaded: {
+                    item.device = qsTr(model.device);
+                    item.status = model.status;
+                    item.ua = qsTr(model.UA);
+                    item.va = qsTr(model.VA);
+                    item.wa = qsTr(model.WA);
+                    item.temp = qsTr(model.temp)
+                }
+            }
+        }
+
     }
 }

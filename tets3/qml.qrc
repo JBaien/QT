@@ -8,7 +8,7 @@
         <file>main4.qml</file>
         <file>blockingmodel.cpp</file>
         <file>blockingmodel.h</file>
-        <file>main.qml</file>
+        <file>main6.qml</file>
         <file>main5.qml</file>
         <file>Image/lock_blue.png</file>
         <file>Image/lock_red.png</file>
@@ -25,5 +25,15 @@
         <file>Image/title_second.png</file>
         <file>Image/voltage.png</file>
         <file>Image/background.png</file>
+        <file>main.qml</file>
+        <file>Components/HeartbeatComponent.qml</file>
+        <file>Components/SystemvoltageComponent.qml</file>
+        <file>Components/BackgroundComponent.qml</file>
+        <file>Components/WorktimeComponent.qml</file>
+        <file>Components/DataComponent.qml</file>
+        <file>Components/MoterTitleComponent.qml</file>
+        <file>Components/ModeComponent.qml</file>
+        <file>Components/MoterComponent.qml</file>
+        <file>Image/back.png</file>
     </qresource>
 </RCC>

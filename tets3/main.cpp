@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 //    QString filePath = "d:/git/QT/tets3/file/blockingModel.json";
     BlockingModel blockingModel;
-    blockingModel.loadFromJson("blockingModel.json");
+//    blockingModel.loadFromJson("blockingModel.json");
 //    blockingModel.addBlockingRecord("24漏电屏蔽ssssssssssssssssssssssssss");
 //    blockingModel.saveToJson("blockingModel.json");
     engine.rootContext()->setContextProperty("blockingModel", &blockingModel);
