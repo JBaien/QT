@@ -21,7 +21,7 @@ Window {
         y: 79
         width: 1900
         height: 957
-        color: "#00000000"
+        color: "#0E1821"
 
         //心跳组件
         ListModel {

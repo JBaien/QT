@@ -38,5 +38,6 @@
         <file>Components/FaultComponent.qml</file>
         <file>Components/StatusComponent.qml</file>
         <file>Components/BottomComponent.qml</file>
+        <file>Image/deepbackground.png</file>
     </qresource>
 </RCC>

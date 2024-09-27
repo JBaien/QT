@@ -4,7 +4,7 @@ import QtQuick 2.0
 Rectangle{
     width: 1920
     height: 88
-    color: "#00000000"
+    color: Qt.rgba(1,1,1,0.16)
 
     Text {
         id: element
