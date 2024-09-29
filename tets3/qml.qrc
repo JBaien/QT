@@ -25,7 +25,7 @@
         <file>Image/title_second.png</file>
         <file>Image/voltage.png</file>
         <file>Image/background.png</file>
-        <file>main.qml</file>
+        <file>main7.qml</file>
         <file>Components/HeartbeatComponent.qml</file>
         <file>Components/SystemvoltageComponent.qml</file>
         <file>Components/BackgroundComponent.qml</file>
@@ -39,5 +39,7 @@
         <file>Components/StatusComponent.qml</file>
         <file>Components/BottomComponent.qml</file>
         <file>Image/deepbackground.png</file>
+        <file>parameterSetComponents/login.qml</file>
+        <file>main.qml</file>
     </qresource>
 </RCC>

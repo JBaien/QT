@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
 
-Rectangle{
+Rectangle {
     width: 1920
     height: 72
     color: "#00000000"
@@ -10,6 +10,7 @@ Rectangle{
     property string shieldText: ""
     property int shieldNum: 0
     property string alarmMessage: ""
+
     Image {
         anchors.fill: parent
         source: "qrc:/Image/back.png"
@@ -49,12 +50,12 @@ Rectangle{
             font.bold: true
         }
 
-        Rectangle{
+        Rectangle {
             x: 273
             y: 3
             width: 1
             height: 66
-            color: Qt.rgba(1,1,1,0.24)
+            color: Qt.rgba(1, 1, 1, 0.24)
         }
 
         Text {
@@ -82,26 +83,28 @@ Rectangle{
             font.bold: true
         }
 
-        Rectangle{
+        Rectangle {
             x: 490
             y: 3
             width: 1
             height: 66
-            color: Qt.rgba(1,1,1,0.24)
+            color: Qt.rgba(1, 1, 1, 0.24)
         }
 
         // 报警信息
         Rectangle {
-            x: 590
-            width: 1300
+            id: alarmRectangle
+            x: 490
+            width: 1430
             height: 72
             color: "#00000000"
-
+            border.width: 2
+            border.color: "#00000000"
             Text {
                 id: alarm_Message
                 text: qsTr(alarmMessage)
                 font.pixelSize: 20
-                color: "red"
+                color: "#FFFFFF"
                 anchors.verticalCenter: parent.verticalCenter
                 x: 340
 
@@ -113,16 +116,34 @@ Rectangle{
                     repeat: true
                     onTriggered: {
                         alarm_Message.x -= 2; // 每次移动2个像素
-//                        console.log("Alarm Message X Position:", alarm_Message.x); // 输出当前 X 位置
-
                         // 当文本完全移出左边界时，重置位置到右边
                         if (alarm_Message.x < 0) {
-                            alarm_Message.x = 1000;
+                            alarm_Message.x = 1300;
                         }
+                    }
+                }
+            }
+
+            // 定时器用于每2秒切换颜色
+            Timer {
+                id: colorTimer
+                interval: 800
+                running: true
+                repeat: true
+                onTriggered: {
+                    // 切换颜色
+                    if (alarmRectangle.color === Qt.rgba(0, 0, 0, 0)) {
+                        alarmRectangle.color = Qt.rgba(0.458824, 0.094118, 0.094118, 1);
+                    } else {
+                        alarmRectangle.color = Qt.rgba(0, 0, 0, 0);
+                    }
+                    if (alarmRectangle.border.color === Qt.rgba(0, 0, 0, 0)) {
+                        alarmRectangle.border.color = Qt.rgba(1, 0.341176, 0.341176, 1);
+                    } else {
+                        alarmRectangle.border.color = Qt.rgba(0, 0, 0, 0);
                     }
                 }
             }
         }
     }
 }
-
