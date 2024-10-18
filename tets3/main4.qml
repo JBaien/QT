@@ -81,7 +81,7 @@ ApplicationWindow {
                         y: 0
                         width: 250
                         height: 90
-                        text: qsTr("工作")
+                        text: qsTr("工作");
                         spacing: 5
                         font.bold: true
                         font.family: "Arial"

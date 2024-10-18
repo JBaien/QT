@@ -66,7 +66,7 @@ Window {
                     color: "#ffffff"
                     text: qsTr("车号：")
                     lineHeight: 1.1
-                    font.family: "Arial"
+                    font.family: "Arial";
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                     font.pixelSize: 90

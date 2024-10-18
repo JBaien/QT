@@ -122,7 +122,7 @@ Window {
                 y: 187
                 width: 1710
                 height: 60
-                color: "#26333f"
+                color: "#26333f";
             }
 
             Rectangle {

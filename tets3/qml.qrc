@@ -40,6 +40,26 @@
         <file>Components/BottomComponent.qml</file>
         <file>Image/deepbackground.png</file>
         <file>parameterSetComponents/login.qml</file>
+        <file>main8.qml</file>
+        <file>normalCtrlComponents/title.qml</file>
+        <file>normalCtrlComponents/main_form.qml</file>
+        <file>normalCtrlComponents/main_form_2.qml</file>
+        <file>main9.qml</file>
+        <file>main10.qml</file>
+        <file>IOMonitoringComponents/output_60.qml</file>
+        <file>IOMonitoringComponents/IOtitle.qml</file>
+        <file>IOMonitoringComponents/input_80.qml</file>
+        <file>main11.qml</file>
+        <file>autoCutComponents/autoCut.qml</file>
+        <file>autoCutComponents/xy.qml</file>
+        <file>autoCutComponents/gaugeSetting.qml</file>
+        <file>autoCutComponents/autoFaultShield.qml</file>
+        <file>autoCutComponents/shieldData.qml</file>
+        <file>autoCutComponents/autoCutMonitor.qml</file>
         <file>main.qml</file>
+        <file>Image/left.png</file>
+        <file>Image/right.png</file>
+        <file>Image/add.png</file>
+        <file>Image/sub.png</file>
     </qresource>
 </RCC>

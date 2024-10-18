@@ -39,7 +39,7 @@ Window {
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignLeft
                 textFormat: Text.PlainText
-                color: "#ffffff"
+                color: "#ffffff";
                 font.family: "Arial"
                 font.pixelSize: 30
             }

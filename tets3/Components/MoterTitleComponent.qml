@@ -25,7 +25,7 @@ Rectangle{
         y: 12
         width: 56
         height: 40
-        text: qsTr("状态")
+        text: qsTr("状态");
         color: "#FFFFFF"
         font.pixelSize: 28
         font.bold: true
